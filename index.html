@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hangman</title>
+
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">	
+	
+
+		<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">	
+	<link rel="stylesheet" type="text/css" href="assets/css/custom.css">
+
+	  <script
+	  src="https://code.jquery.com/jquery-3.1.1.min.js"
+	  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+	  crossorigin="anonymous"></script>
+</head>
+<body>
+
+	<script type="text/javascript">
+		var animals = ["alligator", "kangaroo", "meerkat", "raccoon", "antelope"];
+		var cities = ["Florence", "Melbourne", "Beijing", "Dallas", "Edinburgh", "San Francisco"];
+		var numberWrong = 0
+
+
+		var test = "New South Wales";
+		lowerTest = test.toLowerCase();
+		console.log(lowerTest);
+		var solution = [];
+		var usedLetters = [];
+
+		for (i = 0; i < test.length; i++) {
+			if (test[i] === " "){
+				solution[i] = " ";
+			}
+			else {
+				solution[i] = "-";
+			}
+		};
+
+		console.log(solution);
+		console.log(solution.join(" "));
+
+
+		console.log(solution.indexOf("-"));
+
+			//ends game after 6 wrong guesses (stickman is drawn):
+					//1 - head
+					//2 - body
+					//3 - leg 1
+					//4 - leg 2
+					//5 - arm 1
+					//6 - arm 2
+			//also ends the game if the solution does not have any blanks "-" remaning to guess
+
+		while (numberWrong < 6 && solution.indexOf("-") != -1){
+
+			//get guess from user.  Change this to onKeyUp in final
+			guess = prompt("Guess a letter.");
+
+
+			//check to see if the guess is part of the usedLetters array. If not, add it.
+			//display the array to the user in alphabetical order
+			//if it is already part of that array, ignore it and move to the next if statement
+			if (usedLetters.indexOf(guess.toUpperCase()) === -1) {
+				usedLetters.push(guess.toUpperCase());
+				console.log(usedLetters.sort());
+			}
+
+			else {}
+
+
+
+			//check to see if the guess is part of the goal word. 
+			//if it is not, add 1 to the numberWrong variable 
+			//(and draw the next piece of the stick-figure)
+
+			if (lowerTest.indexOf(guess.toLowerCase()) == -1) {
+				numberWrong++;
+				alert("Wrong  " + solution.join(" "));
+			}
+
+			//if the guess is part of the goal word, update the solution array
+			//everywhere the letter appears.
+			else {
+				for (i = 0; i < solution.length; i++) {
+					if (lowerTest[i] === guess.toLowerCase()) {
+						solution[i] = test[i];
+					}
+				}
+
+			//after all locations are updated, display the updated solution
+			//to the user.
+				alert(solution.join(" "));
+			}
+		}
+
+
+
+
+
+	</script>
+	
+</body>
+</html>
