@@ -1,8 +1,31 @@
-body {
-	background-image: url("../gallows2.png");
-	background-repeat: no-repeat;
 
-	
-	}
+
+.gallows {
+	border-style: solid;
+	border-right-width: 2px;
+}
+.gallows img{
+	width: 100%
+}
+
+.test2 {
+	border-style: solid;
+	border-color: black;
+}
+
+
+.jumbotron h1, p {
+	text-align: center;
+}
+
+.jumbotron {
+	padding: 0;
+}
+
+.skyline img {
+	width: 100%;
+	vertical-align: center;
+}
+
 
 
