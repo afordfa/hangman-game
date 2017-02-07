@@ -27,5 +27,19 @@
 	vertical-align: center;
 }
 
+.gameBoard h1{
+	text-align: center;
+	margin-bottom: 20px;
+	font-size: 82px;
+}
+
+.usedLetters {
+
+}
+
+.resetButton {
+	width: 85%;
+}
+
 
 
