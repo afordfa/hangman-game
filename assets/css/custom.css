@@ -1,17 +1,12 @@
 
 
 .gallows {
-	border-style: solid;
-	border-right-width: 2px;
+
 }
 .gallows img{
 	width: 100%
 }
 
-.test2 {
-	border-style: solid;
-	border-color: black;
-}
 
 
 .jumbotron h1, p {
@@ -40,6 +35,15 @@
 .resetButton {
 	width: 85%;
 }
+
+.longSolution {
+	font-size: 20px;
+}
+
+p {
+	font-size: 24px;
+}
+
 
 
 
